@@ -2,6 +2,7 @@
 # This script runs continuously and checks the temp of two nvidia cards every 5 seconds.
 # If the temp of the card is above certain threasholds, the idrac command is called to increase
 # fan speed. If the temprature drops, the fan speeds also decrease.
+user={enter your user} ##
 fan_speed=0
 
 while true
@@ -13,7 +14,7 @@ do
         echo "fan speed normal"
         if [ $update_speed -ne $fan_speed ]; then
             fan_speed=$update_speed
-            ssh -i /home/paul/.ssh/id_rsa.pem automation@192.168.1.120 << EOF 
+            ssh -i /home/"$user"/.ssh/id_rsa.pem automation@192.168.1.120 << EOF 
                 racadm set System.ThermalSettings.MinimumFanSpeed 0
                 exit
 EOF
@@ -23,7 +24,7 @@ EOF
         echo "fan speed low"
         if [ $update_speed -ne $fan_speed ]; then
             fan_speed=$update_speed
-            ssh -i /home/paul/.ssh/id_rsa.pem automation@192.168.1.120 << EOF
+            ssh -i /home/"$user"/.ssh/id_rsa.pem automation@192.168.1.120 << EOF
                 racadm set System.ThermalSettings.MinimumFanSpeed 30
                 exit
 EOF
@@ -33,7 +34,7 @@ EOF
         echo "fan speed Medium"
                 if [ $update_speed -ne $fan_speed ]; then
             fan_speed=$update_speed
-            ssh -i /home/paul/.ssh/id_rsa.pem automation@192.168.1.120 << EOF
+            ssh -i /home/"$user"/.ssh/id_rsa.pem automation@192.168.1.120 << EOF
                 racadm set System.ThermalSettings.MinimumFanSpeed 50
                 exit
 EOF
@@ -43,7 +44,7 @@ EOF
         echo "fan speed HIGH"
         if [ $update_speed -ne $fan_speed ]; then
             fan_speed=$update_speed
-            ssh -i /home/paul/.ssh/id_rsa.pem automation@192.168.1.120 << EOF
+            ssh -i /home/"$user"/.ssh/id_rsa.pem automation@192.168.1.120 << EOF
                 racadm set System.ThermalSettings.MinimumFanSpeed 70
                 exit
 EOF
@@ -53,7 +54,7 @@ EOF
         echo "fan speed HIGH"
         if [ $update_speed -ne $fan_speed ]; then
             fan_speed=$update_speed
-            ssh -i /home/paul/.ssh/id_rsa.pem automation@192.168.1.120 << EOF
+            ssh -i /home/"$user"/.ssh/id_rsa.pem automation@192.168.1.120 << EOF
                 racadm set System.ThermalSettings.MinimumFanSpeed 100
                 exit
 EOF
