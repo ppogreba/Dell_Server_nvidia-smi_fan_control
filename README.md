@@ -1,0 +1,1 @@
+# Dellr360_nvidia-smi_fan_control
