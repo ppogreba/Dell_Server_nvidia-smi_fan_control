@@ -2,7 +2,7 @@
 # This script runs continuously and checks the temp of two nvidia cards every 5 seconds.
 # If the temp of the card is above certain threasholds, the idrac command is called to increase
 # fan speed. If the temprature drops, the fan speeds also decrease.
-user={enter your user} ##
+user={enter your user} 
 fan_speed=0
 
 while true
