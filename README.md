@@ -1,4 +1,4 @@
-# Dellr360_nvidia-smi_fan_control
+# Dell R630_nvidia-smi_fan_control
 
 # 
 
