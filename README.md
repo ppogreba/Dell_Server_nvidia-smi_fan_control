@@ -9,7 +9,7 @@ USE AT YOUR OWN RISK
 
 ## Step 1
 
-Create user named 'automation' in iDRAC with:
+Create user named 'automation' in iDRAC with: /n
 Roles : Operator
 Login      X
 Configure  X
