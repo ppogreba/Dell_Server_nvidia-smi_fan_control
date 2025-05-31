@@ -25,3 +25,5 @@ ssh-keygen -b 2048 -t rsa
 Upload pub SSH key into 'automation' user
 
 Place .pem (private key) into /etc/ssh/id_rsa.pem on GPU host machine
+
+# Step 2
