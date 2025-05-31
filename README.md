@@ -48,4 +48,5 @@ remember to sudo chmod +x fan_control.sh
 follow instructions in fan_control.services
 
 systemctl enable fan_control.service
+
 systemctl start fan_control.service
