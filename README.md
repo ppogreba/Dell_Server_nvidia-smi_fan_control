@@ -27,3 +27,22 @@ Upload pub SSH key into 'automation' user
 Place .pem (private key) into /etc/ssh/id_rsa.pem on GPU host machine
 
 # Step 2
+
+## Update Global variables on top of fan_control.sh
+
+NUMBER_GPUS=2 ## number of GPUs
+HOST_IP="192.168.1.120" ## ip or resolvable name of host
+
+## Place fan_control.sh into /etc/init.d/ 
+
+remember to sudo chmod +x fan_control.sh
+
+# Step 3
+
+## TEST run /etc/init.d/fan_control.sh
+
+# Step 4 
+
+## Create Daemon
+
+follow instructions in fan_control.services
