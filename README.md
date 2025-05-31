@@ -9,9 +9,12 @@ USE AT YOUR OWN RISK
 
 ## Step 1
 
-Create user named 'automation' in iDRAC with: \n
+Create user named 'automation' in iDRAC with:
+
 Roles : Operator
+
 Login      X
+
 Configure  X
 
 #Create ssh key on host
