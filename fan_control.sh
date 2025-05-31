@@ -5,6 +5,7 @@
 
 # Set number of GPUs
 NUMBER_GPUS=2
+HOST_IP="192.168.1.120"
 
 
 ## Program Start, do not edit anything below this line
@@ -23,8 +24,8 @@ do
             if [$update_speed -ne $fan_speed]; then
                 echo "fan speed MAX"
                 fan_speed=$update_speed
-                ssh -i /etc/ssh/id_rsa.pem automation@192.168.1.120 << EOF
-                    racadm set System.ThermalSettings.MinimumFanSpeed 100
+                ssh -i /etc/ssh/id_rsa.pem automation@$HOST_IP << EOF
+                    racadm set System.ThermalSettings.MinimumFanSpeed $fan_speed
                     exit
 EOF
             fi
@@ -33,8 +34,8 @@ EOF
             if [$update_speed -ne $fan_speed]; then
                 echo "fan speed HIGH"
                 fan_speed=$update_speed
-                ssh -i /etc/ssh/id_rsa.pem automation@192.168.1.120 << EOF
-                    racadm set System.ThermalSettings.MinimumFanSpeed 70
+                ssh -i /etc/ssh/id_rsa.pem automation@$HOST_IP << EOF
+                    racadm set System.ThermalSettings.MinimumFanSpeed $fan_speed
                     exit
 EOF
             fi
@@ -43,8 +44,8 @@ EOF
             if [$update_speed -ne $fan_speed]; then
                 echo "fan speed Medium"
                 fan_speed=$update_speed
-                ssh -i /etc/ssh/id_rsa.pem automation@192.168.1.120 << EOF
-                    racadm set System.ThermalSettings.MinimumFanSpeed 50
+                ssh -i /etc/ssh/id_rsa.pem automation@$HOST_IP << EOF
+                    racadm set System.ThermalSettings.MinimumFanSpeed $fan_speed
                     exit
 EOF
             fi
@@ -53,8 +54,8 @@ EOF
             if [ $update_speed -ne $fan_speed ]; then
                 echo "fan speed low"
                 fan_speed=$update_speed
-                ssh -i /etc/ssh/id_rsa.pem automation@192.168.1.120 << EOF
-                    racadm set System.ThermalSettings.MinimumFanSpeed 30
+                ssh -i /etc/ssh/id_rsa.pem automation@$HOST_IP << EOF
+                    racadm set System.ThermalSettings.MinimumFanSpeed $fan_speed
                     exit
 EOF
             fi
@@ -63,8 +64,8 @@ EOF
             if [ $update_speed -ne $fan_speed ]; then
                 echo "fan speed normal"
                 fan_speed=$update_speed
-                ssh -i /etc/ssh/id_rsa.pem automation@192.168.1.120 << EOF 
-                    racadm set System.ThermalSettings.MinimumFanSpeed 0
+                ssh -i /etc/ssh/id_rsa.pem automation@$HOST_IP << EOF 
+                    racadm set System.ThermalSettings.MinimumFanSpeed $fan_speed
                     exit
 EOF
             fi
