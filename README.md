@@ -9,7 +9,7 @@ USE AT YOUR OWN RISK
 
 ## Step 1
 
-Create user named 'automation' in iDRAC with:
+# Create user named 'automation' in iDRAC with:
 
 Roles : Operator
 
@@ -17,7 +17,9 @@ Login      X
 
 Configure  X
 
-#Create ssh key on host
+
+# Create ssh key on host
+
 ssh-keygen -b 2048 -t rsa
 
 #Upload pub SSH key into 'automation' user
