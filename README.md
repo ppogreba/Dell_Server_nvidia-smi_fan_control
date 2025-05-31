@@ -1,4 +1,6 @@
-# Dell R630_nvidia-smi_fan_control
+# Dell R730_nvidia-smi_fan_control
+
+tested on R630 and R730. should work on may others as well with the same racadm syntax
 
 # 
 
