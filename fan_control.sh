@@ -7,7 +7,6 @@
 NUMBER_GPUS=2
 HOST_IP="192.168.1.120"
 
-
 ## Program Start, do not edit anything below this line
 fan_speed=1
 while true
@@ -53,12 +52,20 @@ do
         update_speed=0
     fi
     if [ $update_speed -ne $fan_speed ]; then
+        longhold=false
+        if [ $update_speed -gt $fan_speed ]; then
+            longhold=true
+        fi
         echo -e "\nUpdate Fan Speed to $update_speed"
         fan_speed=$update_speed
         ssh -i /etc/ssh/id_rsa.pem automation@$HOST_IP << EOF 
         racadm set System.ThermalSettings.MinimumFanSpeed $fan_speed
         exit
 EOF
+        if $longhold; then
+            echo "Success!! - waiting 30"
+            sleep 30
+        fi
     else
         sleep 2
     fi
