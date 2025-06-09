@@ -21,7 +21,7 @@ do
     for temp in ${temps[@]}; do
         if [ $temp -ge 85 ]; then
             update_speed=100
-            if [$update_speed -ne $fan_speed]; then
+            if [ $update_speed -ne $fan_speed ]; then
                 echo "fan speed MAX"
                 fan_speed=$update_speed
                 ssh -i /etc/ssh/id_rsa.pem automation@$HOST_IP << EOF
@@ -31,7 +31,7 @@ EOF
             fi
         elif [ $temp -ge 75 ] && [ $temp -lt 85 ]; then
             update_speed=70           
-            if [$update_speed -ne $fan_speed]; then
+            if [ $update_speed -ne $fan_speed ]; then
                 echo "fan speed HIGH"
                 fan_speed=$update_speed
                 ssh -i /etc/ssh/id_rsa.pem automation@$HOST_IP << EOF
