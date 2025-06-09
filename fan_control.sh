@@ -41,7 +41,7 @@ EOF
             fi
         elif [ $temp -ge 60 ] && [ $temp -lt 75 ]; then
             update_speed=50           
-            if [$update_speed -ne $fan_speed]; then
+            if [ $update_speed -ne $fan_speed ]; then
                 echo "fan speed Medium"
                 fan_speed=$update_speed
                 ssh -i /etc/ssh/id_rsa.pem automation@$HOST_IP << EOF
