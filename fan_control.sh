@@ -14,7 +14,7 @@ do
     MAX=false
     HIGH=false
     MID=false
-    low=False
+    LOW=False
     NORM=false
     temps=()
     for ((i=0; i<$NUMBER_GPUS; i++)); do
