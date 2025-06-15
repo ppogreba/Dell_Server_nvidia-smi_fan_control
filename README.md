@@ -4,8 +4,9 @@ tested on R630 and R730. should work on may others as well with the same racadm 
 
 # 
 
-This programs purpose is to run as a daemon in linux to control the minimum fan-speed of a dell server via idrac ssh with certificate. This method is usually less preferred way to do this, but was the option I went with as it would not impact normal fan function.
-You first need to establish ssh connection via key-pair with idrac from the nvidia host machine. test and verify the script works before setting it as a daemon process. If you have questions, feel free to ask, but this should get you 98% of the way there.
+This programs purpose is to run as a daemon in linux to control the minimum fan-speed of a dell server via idrac ssh with certificate. This method is usually less preferred way to do this, but was the option I went with as it would not impact normal fan function. You first need to establish ssh connection via key-pair with idrac from the nvidia host machine. test and verify the script works before setting it as a daemon process. If you have questions, feel free to ask, but this should get you 98% of the way there.
+
+There is an alternative ipmi method in case that is more preferred for higher end cards. Please use this method with caution, as it aims to lower the default speed instead of just increase the default speed of the fans.
 
 USE AT YOUR OWN RISK
 
